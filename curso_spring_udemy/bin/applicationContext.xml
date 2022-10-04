@@ -16,7 +16,7 @@
     </bean>
     
     <bean id="myCoach"
-    	class="com.jvalido.springdemo.BaseballCoach">    
+    	class="com.jvalido.springdemo.FootballCoach">    
     </bean>
     
 </beans>
