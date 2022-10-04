@@ -15,8 +15,16 @@
     	<property name="printedLoggerLevel" value="FINE"/>
     </bean>
     
+    <!-- dependency bean -->
+    <bean id="myFortune"
+    	class="com.jvalido.springdemo.HappyFortuneService">
+    </bean>
+    
     <bean id="myCoach"
-    	class="com.jvalido.springdemo.FootballCoach">    
+    	class="com.jvalido.springdemo.TrackCoach"> 
+    	
+    	<!-- set up constructor injection -->
+    	<constructor-arg ref="myFortune"/>   
     </bean>
     
 </beans>
