@@ -11,7 +11,7 @@ public class SetterDemoApp {
 				new ClassPathXmlApplicationContext("applicationContext.xml");
 		
 		//retrieve the bean
-		CricketCoach coach = context.getBean("myCricketCoach", CricketCoach.class);
+		CricketCoach coach = context.getBean("myCricketCoachRandomFortune", CricketCoach.class);
 		
 		//call methods on the bean
 		System.out.println(coach.getDailyWorkout());

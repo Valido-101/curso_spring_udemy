@@ -22,12 +22,24 @@
     	class="com.jvalido.springdemo.HappyFortuneService">
     </bean>
     
+    <bean id="myRandomFortune"
+    	class="com.jvalido.springdemo.RandomFortuneService">
+    </bean>
+    
     <bean id="myCoach"
     	class="com.jvalido.springdemo.TrackCoach"> 
     	
     	<!-- set up constructor injection -->
     	<!-- esto utiliza el constructor con parámetros y le pasa el parámetro FortuneService -->
     	<constructor-arg ref="myFortune"/>   
+    </bean>
+    
+    <bean id="myCricketCoachRandomFortune"
+    	class="com.jvalido.springdemo.CricketCoach"> 
+    	
+    	<!-- set up constructor injection -->
+    	<!-- esto utiliza el constructor con parámetros y le pasa el parámetro FortuneService -->
+    	<property name="fortuneService" ref="myRandomFortune"/>  
     </bean>
     
     <bean id="myCricketCoach"
