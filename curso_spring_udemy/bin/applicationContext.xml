@@ -24,7 +24,17 @@
     	class="com.jvalido.springdemo.TrackCoach"> 
     	
     	<!-- set up constructor injection -->
+    	<!-- esto utiliza el constructor con parámetros y le pasa el parámetro FortuneService -->
     	<constructor-arg ref="myFortune"/>   
+    </bean>
+    
+    <bean id="myCricketCoach"
+    	class="com.jvalido.springdemo.CricketCoach">
+    	
+    	<!-- set up setter injection -->
+    	<!-- esto usa el setter de la clase CricketCoach para inyectarle la propiedad que necesita la clase -->
+    	<property name="fortuneService" ref="myFortune"/>
+    	
     </bean>
     
 </beans>
