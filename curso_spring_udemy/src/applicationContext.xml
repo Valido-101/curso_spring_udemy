@@ -35,6 +35,11 @@
     	<!-- esto usa el setter de la clase CricketCoach para inyectarle la propiedad que necesita la clase -->
     	<property name="fortuneService" ref="myFortune"/>
     	
+    	<!-- Inject literal values -->
+    	<property name="emailAddress" value="jesuszafra22@gmail.com"/>
+    	
+    	<property name="team" value="Sunrisers Hyderabad"/>
+    	
     </bean>
     
 </beans>
