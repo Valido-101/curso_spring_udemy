@@ -25,7 +25,7 @@ public class BeanScopeDemoApp {
 		
 		//load the spring config file
 		ClassPathXmlApplicationContext context = 
-				new ClassPathXmlApplicationContext("activity3-applicationContext.xml");
+				new ClassPathXmlApplicationContext("com/jvalido/activity3/activity3-applicationContext.xml");
 		
 		//retrieve beans from the spring container
 		Coach theCoach = context.getBean("myCoach", Coach.class);
