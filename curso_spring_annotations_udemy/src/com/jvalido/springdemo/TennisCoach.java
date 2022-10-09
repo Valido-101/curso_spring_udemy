@@ -16,13 +16,20 @@ public class TennisCoach implements Coach {
 		System.out.println(">> TennisCoach: inside default constructor");
 	}
 	
-	//define setter method
+	//Con la anotación @Autowired cualquier método puede usarse para inyectar dependencia, no solo un setter o un constructor
 	@Autowired
+	public void inyectarDependencia(FortuneService fortuneService) {
+		System.out.println(">> TennisCoach: inside inyectarDependencia() method");
+		this.fortuneService = fortuneService;
+	}
+	
+	//define setter method
+	/*@Autowired
 	public void setFortuneService(FortuneService fortuneService) {
 		System.out.println(">> TennisCoach: inside setFortune() method");
 		this.fortuneService = fortuneService;
 	}
-	
+	*/
 	/*
 	//Esta anotación escanea el paquete hasta que encuentre una clase que implementa la interfaz del parámetro para añadirla al constructor
 	@Autowired
