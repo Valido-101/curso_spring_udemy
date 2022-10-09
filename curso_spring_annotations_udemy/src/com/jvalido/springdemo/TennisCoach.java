@@ -14,7 +14,7 @@ public class TennisCoach implements Coach {
 	//Cuando haya más de una clase que implemente esta interfaz debemos usar la anotación Qualifier para concretar cuál
 	//debe usar Spring
 	@Autowired
-	@Qualifier("happyFortuneService")
+	@Qualifier("randomFortuneService")
 	private FortuneService fortuneService;
 	
 	//define default constructor
