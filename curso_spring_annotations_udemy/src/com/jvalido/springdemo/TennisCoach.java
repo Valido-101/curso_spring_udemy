@@ -1,6 +1,7 @@
 package com.jvalido.springdemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 //Si indicamos un id junto con la anotación @Component, spring usará ese id
@@ -10,7 +11,10 @@ import org.springframework.stereotype.Component;
 public class TennisCoach implements Coach {
 
 	//Field injection con Autowired, esta anotación hace maravillas, lo mismo que si lo usas en el setter o el constructor
+	//Cuando haya más de una clase que implemente esta interfaz debemos usar la anotación Qualifier para concretar cuál
+	//debe usar Spring
 	@Autowired
+	@Qualifier("happyFortuneService")
 	private FortuneService fortuneService;
 	
 	//define default constructor
