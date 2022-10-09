@@ -1,4 +1,4 @@
-package com.jvalido.springdemo;
+package com.jvalido.activity4;
 
 interface Coach {
 	
