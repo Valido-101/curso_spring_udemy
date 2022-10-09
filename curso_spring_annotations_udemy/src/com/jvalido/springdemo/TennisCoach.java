@@ -1,5 +1,8 @@
 package com.jvalido.springdemo;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
@@ -10,7 +13,7 @@ import org.springframework.stereotype.Component;
 //Si no indicamos un id, spring le asignará uno por defecto que será el nombre de la clase en CamelCase
 @Component
 //Con Scope definimos las veces que se crea un bean
-@Scope("prototype")
+@Scope("singleton")
 public class TennisCoach implements Coach {
 
 	//Field injection con Autowired, esta anotación hace maravillas, lo mismo que si lo usas en el setter o el constructor
@@ -23,6 +26,25 @@ public class TennisCoach implements Coach {
 	//define default constructor
 	public TennisCoach() {
 		System.out.println(">> TennisCoach: inside default constructor");
+	}
+	
+	/*
+	 * ATENCIÓN
+	 * 
+	 * Para java 9 o superior, estas anotaciones de PostConstruct y PreDestroy no existen, hay que descargar la librería de annotations
+	 * (javax.annotation-api-1.3.2.jar) e incluirla en el buildpath
+	 */
+	
+	//define init method
+	@PostConstruct
+	public void doMyStartupStuff() {
+		System.out.println(">> TennisCoach: inside doMySTartupStuff()");
+	}
+	
+	//define destroy method
+	@PreDestroy
+	public void doMyCleanupStuff() {
+		System.out.println(">> TennisCoach: inside doMyCleanupStuff()");
 	}
 	
 	/*
