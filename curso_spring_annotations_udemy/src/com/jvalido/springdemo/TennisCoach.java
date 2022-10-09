@@ -9,6 +9,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class TennisCoach implements Coach {
 
+	//Field injection con Autowired, esta anotación hace maravillas, lo mismo que si lo usas en el setter o el constructor
+	@Autowired
 	private FortuneService fortuneService;
 	
 	//define default constructor
@@ -16,12 +18,14 @@ public class TennisCoach implements Coach {
 		System.out.println(">> TennisCoach: inside default constructor");
 	}
 	
+	/*
 	//Con la anotación @Autowired cualquier método puede usarse para inyectar dependencia, no solo un setter o un constructor
 	@Autowired
 	public void inyectarDependencia(FortuneService fortuneService) {
 		System.out.println(">> TennisCoach: inside inyectarDependencia() method");
 		this.fortuneService = fortuneService;
 	}
+	*/
 	
 	//define setter method
 	/*@Autowired
