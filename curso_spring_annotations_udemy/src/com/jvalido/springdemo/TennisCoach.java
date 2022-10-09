@@ -2,12 +2,15 @@ package com.jvalido.springdemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 //Si indicamos un id junto con la anotación @Component, spring usará ese id
 //@Component("thatSillyCoach")
 //Si no indicamos un id, spring le asignará uno por defecto que será el nombre de la clase en CamelCase
 @Component
+//Con Scope definimos las veces que se crea un bean
+@Scope("prototype")
 public class TennisCoach implements Coach {
 
 	//Field injection con Autowired, esta anotación hace maravillas, lo mismo que si lo usas en el setter o el constructor
